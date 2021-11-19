@@ -25,13 +25,13 @@ $di->tpl = function() {
 
 ```php
 // 模板变量赋值
-$di->tpl->assign(array('name' => 'think'));
+\PhalApi\DI()->tpl->assign(array('name' => 'think'));
 // 读取模板文件渲染输出
-$di->tpl->fetch('index');
+\PhalApi\DI()->tpl->fetch('index');
 // 完整模板文件渲染
-$di->tpl->fetch('./template/test.php');
+\PhalApi\DI()->tpl->fetch('./template/test.php');
 // 渲染内容输出
-$di->tpl->display($content);
+\PhalApi\DI()->tpl->display($content);
 ```
 
 配置参数（详见phalapi/template/src/Lite.php）
@@ -76,8 +76,8 @@ $output['list'] = array(
     array('title' => '标题1'),
     array('title' => '标题2')
 );
-$di->tpl->assign($output);      
-$di->tpl->fetch('index');
+\PhalApi\DI()->tpl->assign($output);      
+\PhalApi\DI()->tpl->fetch('index');
 
 //index.html
 <h1 class="title">{$title}</h1>
